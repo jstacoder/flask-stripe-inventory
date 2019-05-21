@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+
+{% macro render_form(form) %}
+    {% if form %}
+        <form method="post">
+            {%  for field in form %}
+                <div class="form-group">
+                    <label>{{ field.label.text }}</label>
+                    {{ field(class_='form-control') }}
+                </div>
+            {% endfor %}
+            <button type="submit" class="btn-block">Submit</button>
+        </form>
+    {% endif %}
+{% endmacro %}
+
+{% block body %}
+{{ render_form(form) }}
+{% endblock %}

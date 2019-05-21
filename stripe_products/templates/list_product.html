@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    {% for product in products %}
+        <dl>
+        {% for key, value in product.items() %}
+            <dt>{{ key }}:</dt>
+            <dd>{{ value }}</dd>
+        {% endfor %}
+        </dl>
+    {% endfor %}
+{% endblock %}
